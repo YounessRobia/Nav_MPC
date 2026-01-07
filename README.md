@@ -48,8 +48,8 @@ Complex multi-objective scenario combining static building obstacles with moving
 
 ```bash
 # Clone the repository
-git clone https://github.com/YounessRobIA/MPC_PLANNER.git
-cd MPC_PLANNER
+git clone https://github.com/YounessRobia/Nav_MPC.git
+cd Nav_MPC
 
 # Create virtual environment (recommended)
 python -m venv venv
@@ -100,5 +100,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-**Youness El Mrhasli** - [YounessRobIA](https://github.com/YounessRobIA)
+**Youness El Mrhasli** - [YounessRobia](https://github.com/YounessRobia)
 
