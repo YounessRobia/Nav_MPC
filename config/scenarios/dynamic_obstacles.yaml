@@ -1,0 +1,52 @@
+# Dynamic Obstacles Scenario
+name: "Dynamic Obstacle Avoidance"
+description: "Navigate while avoiding moving obstacles with known trajectories"
+
+simulation:
+  duration: 20.0
+  dt: 0.05
+
+initial_state:
+  position: [0.0, 0.0, 10.0]
+  velocity: [0.0, 0.0, 0.0]
+  acceleration: [0.0, 0.0, 0.0]
+  yaw: 0.0
+
+goal:
+  position: [25.0, 0.0, 10.0]
+  tolerance: 0.5
+
+waypoints: []
+
+static_obstacles: []
+
+dynamic_obstacles:
+  # Crossing obstacle (perpendicular to UAV path)
+  - type: sphere
+    radius: 1.0
+    safety_margin: 0.5
+    trajectory:
+      type: linear
+      # Position at t=0 and velocity
+      initial_position: [12.0, -15.0, 10.0]
+      velocity: [0.0, 3.0, 0.0]  # Moving in +y direction
+
+  # Oncoming obstacle
+  - type: sphere
+    radius: 0.8
+    safety_margin: 0.5
+    trajectory:
+      type: linear
+      initial_position: [30.0, 0.5, 10.0]
+      velocity: [-2.0, 0.0, 0.0]  # Moving in -x direction
+
+  # Orbiting obstacle
+  - type: sphere
+    radius: 0.6
+    safety_margin: 0.5
+    trajectory:
+      type: circular
+      center: [18.0, 0.0, 10.0]
+      radius: 3.0
+      angular_velocity: 0.5  # rad/s
+      initial_phase: 0.0

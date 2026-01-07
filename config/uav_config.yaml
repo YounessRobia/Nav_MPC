@@ -1,0 +1,23 @@
+# UAV Physical Parameters
+mass: 1.5  # kg
+
+# Velocity constraints
+max_velocity: 10.0  # m/s
+
+# Acceleration constraints
+max_acceleration: 5.0  # m/s^2
+
+# Jerk constraints (control input)
+max_jerk: 30.0  # m/s^3
+
+# Yaw rate constraint
+max_yaw_rate: 1.5  # rad/s
+
+# Position bounds (for geofencing)
+position_bounds:
+  x_min: -50.0
+  x_max: 50.0
+  y_min: -50.0
+  y_max: 50.0
+  z_min: 5.0   # minimum altitude [m]
+  z_max: 25.0  # maximum altitude [m]

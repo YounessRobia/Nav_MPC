@@ -1,0 +1,33 @@
+# Single Sphere Avoidance Scenario
+name: "Single Sphere Avoidance"
+description: "Navigate around a single spherical obstacle"
+
+# Simulation parameters
+simulation:
+  duration: 15.0      # seconds
+  dt: 0.05            # simulation timestep
+
+# Initial UAV state
+initial_state:
+  position: [0.0, 0.0, 10.0]
+  velocity: [0.0, 0.0, 0.0]
+  acceleration: [0.0, 0.0, 0.0]
+  yaw: 0.0
+
+# Goal position
+goal:
+  position: [20.0, 0.0, 10.0]
+  tolerance: 0.5      # meters
+
+# Waypoints (optional intermediate points)
+waypoints: []
+
+# Static obstacles
+static_obstacles:
+  - type: sphere
+    center: [10.0, 0.0, 10.0]
+    radius: 2.0
+    safety_margin: 0.5
+
+# Dynamic obstacles (empty for this scenario)
+dynamic_obstacles: []

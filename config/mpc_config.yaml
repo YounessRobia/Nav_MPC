@@ -1,0 +1,38 @@
+# MPC Controller Parameters
+
+# Horizon parameters
+horizon: 20        # Number of prediction steps (N)
+dt: 0.05           # Sampling period in seconds (Ts)
+# Total prediction time: N * Ts = 1.0 seconds
+
+# State cost weights (Q matrix diagonal)
+# State: [x, y, z, vx, vy, vz, ax, ay, az, yaw]
+Q_position: [10.0, 10.0, 15.0]    # Higher z weight for altitude priority
+Q_velocity: [3.0, 3.0, 3.0]       # Velocity tracking
+Q_acceleration: [0.5, 0.5, 0.5]   # Acceleration smoothness
+Q_yaw: 1.0                        # Heading alignment
+
+# Control cost weights (R matrix diagonal)
+# Control: [jx, jy, jz, yaw_rate]
+R_jerk: [0.1, 0.1, 0.1]           # Jerk penalty
+R_yaw_rate: 0.5                   # Yaw rate penalty
+
+# Control smoothness weights (S matrix diagonal)
+# Penalizes control rate changes (delta_u)
+S_jerk: [0.05, 0.05, 0.05]
+S_yaw_rate: 0.1
+
+# Terminal cost multiplier
+# Qf = Qf_multiplier * Q
+Qf_multiplier: 5.0
+
+# Obstacle avoidance parameters
+obstacle_weight: 500.0            # Soft constraint weight
+safety_margin: 0.5                # Additional clearance in meters
+
+# Solver settings (IPOPT)
+solver:
+  max_iter: 200
+  tolerance: 1.0e-4
+  print_level: 0                  # 0=silent, 5=verbose
+  warm_start: true

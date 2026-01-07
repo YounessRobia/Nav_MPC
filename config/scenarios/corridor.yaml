@@ -1,0 +1,34 @@
+# Corridor Navigation Scenario
+name: "Corridor Navigation"
+description: "Navigate through a narrow passage between walls"
+
+simulation:
+  duration: 20.0
+  dt: 0.05
+
+initial_state:
+  position: [0.0, 0.0, 10.0]
+  velocity: [0.0, 0.0, 0.0]
+  acceleration: [0.0, 0.0, 0.0]
+  yaw: 0.0
+
+goal:
+  position: [30.0, 0.0, 10.0]
+  tolerance: 0.5
+
+waypoints:
+  - position: [15.0, 0.0, 10.0]
+
+static_obstacles:
+  # Left wall (series of boxes)
+  - type: box
+    center: [15.0, 4.0, 12.0]
+    half_extents: [10.0, 1.0, 8.0]
+    safety_margin: 0.3
+  # Right wall
+  - type: box
+    center: [15.0, -4.0, 12.0]
+    half_extents: [10.0, 1.0, 8.0]
+    safety_margin: 0.3
+
+dynamic_obstacles: []
