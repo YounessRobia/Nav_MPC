@@ -16,8 +16,9 @@ for _mod in [k for k in sys.modules if k.startswith('mpl_toolkits')]:
 
 from .plotter_3d import Plotter3D
 from .animation import TrajectoryAnimator
+from .sensor_animation import SensorTrajectoryAnimator
 
 if _removed:
     sys.path.append(_conflicting_path)
 
-__all__ = ["Plotter3D", "TrajectoryAnimator"]
+__all__ = ["Plotter3D", "TrajectoryAnimator", "SensorTrajectoryAnimator"]

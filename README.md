@@ -29,6 +29,14 @@ Navigation through a swarm of randomly moving dynamic obstacles demonstrating th
   <img src="results/swarm_avoidance_seed3041.gif" alt="Swarm Avoidance" width="700"/>
 </p>
 
+### Sensor-Based Obstacle Avoidance
+
+Reactive navigation using a simulated limited field-of-view sensor. Obstacles are unknown a priori and discovered at runtime within a configurable detection cone and range. A perception module tracks detected obstacles and feeds them to the MPC, which re-plans in real time using only currently observed threats.
+
+<p align="center">
+  <img src="results/random_sensor_avoidance.gif" alt="Random Sensor-Based Avoidance" width="700"/>
+</p>
+
 ### Urban Rescue Mission
 
 Complex multi-objective scenario combining static building obstacles with moving patrol drones. The UAV must visit multiple waypoints while avoiding all obstacles.
